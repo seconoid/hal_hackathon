@@ -19,8 +19,24 @@ header{
 	padding: 0;
 }
 
+/* タイル部分 */
 .box-b{
 	background: #3273c6;
+}
+
+.box-b:hover{
+  animation: rot 0.7s;
+  -webkit-animation: rot 0.7s;
+}
+
+@keyframes rot{
+  0%{ transform: rotateY(0deg); }
+  100%{ transform: rotateY(180deg); }
+}
+
+@-webkit-keyframes rot{
+  0%{ transform: rotateY(0deg); }
+  100%{ transform: rotateY(180deg); }
 }
 
 .box-c{
