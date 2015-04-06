@@ -1,12 +1,20 @@
 @charset "utf-8";
+@font-face {
+  font-family: "vertigo";
+  src: url("../font/vertigo/VertigoFLF.ttf") format('truetype');
+  font-weight: normal;
+  font-style: none;
+}
 
 /* fadeIn用に全体を非表示にしておく */
 body {
+  font-family: "vertigo";
   display: none;
 }
 
 header{
 	height: 70px;
+  font-size: 26px;
 }
 
 .box-a{
@@ -25,7 +33,12 @@ header{
 }
 
 .box-c{
-	background: #e2e2f3;
+	background: #f7f7fa;
+}
+
+.box-d{
+  border: #000;
+  height: 70px;
 }
 
 .square{
@@ -34,6 +47,13 @@ header{
   -webkit-animation: rotate_panel 0.8s 0.8s;
   animation-fill-mode: forwards;
   -webkit-animation-fill-mode: forwards;
+}
+
+.text{
+  font-size: 48px;
+  letter-spacing: 0.05em;
+  color: #d3d3e4;
+  margin: 15px;
 }
 
 @keyframes rotate_panel{
