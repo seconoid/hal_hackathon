@@ -17,6 +17,15 @@ header{
   font-size: 26px;
 }
 
+.main{
+  display: block;
+}
+
+// 非アクティブ要素
+.sub{
+  display: none;
+}
+
 .box-a{
 	border: solid 1px #255;
 	height: 400px;
