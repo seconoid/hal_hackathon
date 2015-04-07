@@ -26,45 +26,61 @@ $(window).on('resize', function(){
 
 // コンテンツをクリックでメイン領域の表示を変更
 $('.about-trg').click(function(){
-  $('.main').hide();
-  $('.main').addClass('sub');
-  $('.main').removeClass('main');
-  $('.about').addClass('main');
-  $('.about').removeClass('.sub');
-  $('.main').show();
-  $('.about-trg').removeClass('off');
-  $('.about-trg').addClass('on');
+  if( $(this).hasClass('on') ){
+    return false;
+  }
+  $('.main').slideUp(550,function(){
+    $('.main').addClass('sub');
+    $('.main').removeClass('main');
+    $('.about').addClass('main');
+    $('.about').removeClass('.sub');
+    $('.main').slideDown(550);
+    $('.about-trg').removeClass('off');
+    $('.about-trg').addClass('on');
+  });
 });
 
 $('.concept-trg').click(function(){
-  $('.main').hide();
-  $('.main').addClass('sub');
-  $('.main').removeClass('main');
-  $('.concept').addClass('main');
-  $('.concept').removeClass('.sub');
-  $('.main').show();
-  $('.concept-trg').removeClass('off');
-  $('.concept-trg').addClass('on');
+  if( $(this).hasClass('on') ){
+    return false;
+  }
+  $('.main').slideUp(550,function(){
+    $('.main').addClass('sub');
+    $('.main').removeClass('main');
+    $('.concept').addClass('main');
+    $('.concept').removeClass('.sub');
+    $('.main').slideDown(550);
+    $('.concept-trg').removeClass('off');
+    $('.concept-trg').addClass('on');
+  });
 });
 
 $('.archieve-trg').click(function(){
-  $('.main').hide();
-  $('.main').addClass('sub');
-  $('.main').removeClass('main');
-  $('.archieve').addClass('main');
-  $('.archieve').removeClass('.sub');
-  $('.main').show();
-  $('.archieve-trg').removeClass('off');
-  $('.archieve-trg').addClass('on');
+  if( $(this).hasClass('on') ){
+    return false;
+  }
+  $('.main').slideUp(550,function(){
+    $('.main').addClass('sub');
+    $('.main').removeClass('main');
+    $('.archieve').addClass('main');
+    $('.archieve').removeClass('.sub');
+    $('.main').slideDown(550);
+    $('.archieve-trg').removeClass('off');
+    $('.archieve-trg').addClass('on');
+  });
 });
 
 $('.news-trg').click(function(){
-  $('.main').hide();
-  $('.main').addClass('sub');
-  $('.main').removeClass('main');
-  $('.news').addClass('main');
-  $('.news').removeClass('.sub');
-  $('.main').show();
-  $('.news-trg').removeClass('off');
-  $('.news-trg').addClass('on');
+  if( $(this).hasClass('on') ){
+    return false;
+  }
+  $('.main').slideUp(550,function(){
+    $('.main').addClass('sub');
+    $('.main').removeClass('main');
+    $('.news').addClass('main');
+    $('.news').removeClass('.sub');
+    $('.main').slideDown(550);
+    $('.news-trg').removeClass('off');
+    $('.news-trg').addClass('on');
+  });
 });
