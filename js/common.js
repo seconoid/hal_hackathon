@@ -7,7 +7,6 @@ $(document).ready(function(){
   // 正方形を生成
   var w = $('.box-b').width();
   $('.box-b').css('height', w);
-  var w = $('.box-c').width();
   $('.box-c').css('height', w);
   var w = $('.box-d').width();
   $('.box-d').css('height', w);

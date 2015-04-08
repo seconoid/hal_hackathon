@@ -46,7 +46,6 @@ header{
 }
 
 .box-d{
-  border: #000;
   height: 70px;
 }
 
@@ -59,10 +58,10 @@ header{
 }
 
 .text{
-  font-size: 48px;
+  font-size: 28px;
   letter-spacing: 0.05em;
   color: #d3d3e4;
-  margin: 15px;
+  margin: 10px;
 }
 
 @keyframes rotate_panel{
