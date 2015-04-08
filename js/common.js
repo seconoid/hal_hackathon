@@ -35,6 +35,8 @@ $('.about-trg').click(function(){
     $('.about').addClass('main');
     $('.about').removeClass('.sub');
     $('.main').slideDown(550);
+    $('.on').addClass('off');
+    $('.on').removeClass('on');
     $('.about-trg').removeClass('off');
     $('.about-trg').addClass('on');
   });
@@ -50,6 +52,8 @@ $('.concept-trg').click(function(){
     $('.concept').addClass('main');
     $('.concept').removeClass('.sub');
     $('.main').slideDown(550);
+    $('.on').addClass('off');
+    $('.on').removeClass('on');
     $('.concept-trg').removeClass('off');
     $('.concept-trg').addClass('on');
   });
@@ -65,6 +69,8 @@ $('.archieve-trg').click(function(){
     $('.archieve').addClass('main');
     $('.archieve').removeClass('.sub');
     $('.main').slideDown(550);
+    $('.on').addClass('off');
+    $('.on').removeClass('on');
     $('.archieve-trg').removeClass('off');
     $('.archieve-trg').addClass('on');
   });
@@ -80,6 +86,8 @@ $('.news-trg').click(function(){
     $('.news').addClass('main');
     $('.news').removeClass('.sub');
     $('.main').slideDown(550);
+    $('.on').addClass('off');
+    $('.on').removeClass('on');
     $('.news-trg').removeClass('off');
     $('.news-trg').addClass('on');
   });
