@@ -41,7 +41,41 @@ $(window).on('resize', function(){
   $('.box-z').css('height', w);
 });
 
-// コンテンツをクリックでメイン領域の表示を変更
+// ナビゲーションをクリックでコンテンツエリアを変更
+$('.logo').click(function(){
+  if( $(this).hasClass('on') ){
+    return false;
+  }
+  $('.main').slideUp(550,function(){
+    $('.main').addClass('sub');
+    $('.main').removeClass('main');
+    $('.mv').addClass('main');
+    $('.mv').removeClass('.sub');
+    $('.main').slideDown(550);
+    $('.on').addClass('off');
+    $('.on').removeClass('on');
+    $('.logo').removeClass('off');
+    $('.logo').addClass('on');
+  });
+});
+
+$('.box-a').click(function(){
+  if( $(this).hasClass('on') ){
+    return false;
+  }
+  $('.main').slideUp(550,function(){
+    $('.main').addClass('sub');
+    $('.main').removeClass('main');
+    $('.mv').addClass('main');
+    $('.mv').removeClass('.sub');
+    $('.main').slideDown(550);
+    $('.on').addClass('off');
+    $('.on').removeClass('on');
+    $('.box-a').removeClass('off');
+    $('.box-a').addClass('on');
+  });
+});
+
 $('.about-trg').click(function(){
   if( $(this).hasClass('on') ){
     return false;
