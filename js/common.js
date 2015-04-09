@@ -5,22 +5,40 @@ $(document).ready(function(){
   $('.sub').hide();
 
   // 正方形を生成
-  var w = $('.box-b').width();
+  // ヘッダ部分
+  var w = $('.size-a').width();
+  $('.box-a').css('height', w);
   $('.box-b').css('height', w);
   $('.box-c').css('height', w);
-  var w = $('.box-d').width();
-  $('.box-d').css('height', w);
-  $('.box-d').css('line-height', w+'px');
+  // ヘッダエリアの文字位置調整
+  $('.box-a').css('line-height', w+'px');
+  $('.box-b').css('line-height', w+'px');
+  $('.box-c').css('line-height', w+'px');
+
+  // ナビゲーションエリア
+  var w = $('.size-b').width();
+  $('.box-x').css('height', w);
+  $('.box-y').css('height', w);
+  $('.box-z').css('height', w);
 });
 
 // リサイズ時に正方形を維持
 $(window).on('resize', function(){
-  var w = $('.box-b').width();
+  // ヘッダ部分
+  var w = $('.size-a').width();
+  $('.box-a').css('height', w);
   $('.box-b').css('height', w);
-  var w = $('.box-c').width();
   $('.box-c').css('height', w);
-  var w = $('.box-d').width();
-  $('.box-d').css('height', w);
+  // ヘッダエリアの文字位置調整
+  $('.box-a').css('line-height', w+'px');
+  $('.box-b').css('line-height', w+'px');
+  $('.box-c').css('line-height', w+'px');
+
+  // ナビゲーションエリア
+  var w = $('.size-b').width();
+  $('.box-x').css('height', w);
+  $('.box-y').css('height', w);
+  $('.box-z').css('height', w);
 });
 
 // コンテンツをクリックでメイン領域の表示を変更

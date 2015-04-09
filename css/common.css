@@ -8,12 +8,14 @@
 
 /* fadeIn用に全体を非表示にしておく */
 body {
+  background: #cc3133;
   font-family: "vertigo";
   display: none;
 }
 
 header{
-	height: 70px;
+  color: #f9faf2;
+  text-align: center;
   font-size: 26px;
 }
 
@@ -26,9 +28,18 @@ header{
   display: none;
 }
 
-.box-a{
-	border: solid 1px #255;
+.content{
+  background: #fffaf1;
 	height: 400px;
+}
+
+/* ロゴ */
+.logo{
+  color: #fff8f1;
+  height: 50px;
+  background: #f33254;
+  text-align: center;
+  line-height: 50px;
 }
 
 /* 外余白をなくすクラス */
@@ -37,16 +48,28 @@ header{
 }
 
 /* タイル部分 */
+.box-a{
+  background: #f33254
+}
+
 .box-b{
-	background: #3273c6;
+	background: #3f172a;
 }
 
 .box-c{
-	background: #f7f7fa;
+	background: #c34250;
 }
 
-.box-d{
-  height: 70px;
+.box-x{
+  background: #833240;
+}
+
+.box-y{
+  background: #ffb5d0;
+}
+
+.box-z{
+  background: #f26580;
 }
 
 .square{
@@ -60,7 +83,7 @@ header{
 .text{
   font-size: 28px;
   letter-spacing: 0.05em;
-  color: #d3d3e4;
+  color: #fcf1f3;
   margin: 10px;
 }
 
