@@ -59,7 +59,7 @@ $('.logo').click(function(){
   });
 });
 
-$('.box-a').click(function(){
+$('.logo2').click(function(){
   if( $(this).hasClass('on') ){
     return false;
   }
