@@ -41,105 +41,53 @@ $(window).on('resize', function(){
   $('.box-z').css('height', w);
 });
 
-// ナビゲーションをクリックでコンテンツエリアを変更
-$('.logo').click(function(){
-  if( $(this).hasClass('on') ){
-    return false;
-  }
-  $('.main').slideUp(550,function(){
-    $('.main').addClass('sub');
-    $('.main').removeClass('main');
-    $('.mv').addClass('main');
-    $('.mv').removeClass('.sub');
-    $('.main').slideDown(550);
-    $('.on').addClass('off');
-    $('.on').removeClass('on');
-    $('.logo').removeClass('off');
-    $('.logo').addClass('on');
-  });
-});
-
-$('.logo2').click(function(){
-  if( $(this).hasClass('on') ){
-    return false;
-  }
-  $('.main').slideUp(550,function(){
-    $('.main').addClass('sub');
-    $('.main').removeClass('main');
-    $('.mv').addClass('main');
-    $('.mv').removeClass('.sub');
-    $('.main').slideDown(550);
-    $('.on').addClass('off');
-    $('.on').removeClass('on');
-    $('.box-a').removeClass('off');
-    $('.box-a').addClass('on');
-  });
-});
-
+// ナビをクリックでコンテンツエリアを変更
 $('.about-trg').click(function(){
-  if( $(this).hasClass('on') ){
-    return false;
-  }
-  $('.main').slideUp(550,function(){
-    $('.main').addClass('sub');
-    $('.main').removeClass('main');
-    $('.about').addClass('main');
-    $('.about').removeClass('.sub');
-    $('.main').slideDown(550);
-    $('.on').addClass('off');
-    $('.on').removeClass('on');
-    $('.about-trg').removeClass('off');
-    $('.about-trg').addClass('on');
-  });
+  var cont = $('.about')
+  var trg = $(this)
+  slide(cont, trg);
 });
 
 $('.concept-trg').click(function(){
-  if( $(this).hasClass('on') ){
-    return false;
-  }
-  $('.main').slideUp(550,function(){
-    $('.main').addClass('sub');
-    $('.main').removeClass('main');
-    $('.concept').addClass('main');
-    $('.concept').removeClass('.sub');
-    $('.main').slideDown(550);
-    $('.on').addClass('off');
-    $('.on').removeClass('on');
-    $('.concept-trg').removeClass('off');
-    $('.concept-trg').addClass('on');
-  });
+  var cont = $('.concept')
+  var trg = $(this)
+  slide(cont, trg);
 });
 
-$('.archieve-trg').click(function(){
-  if( $(this).hasClass('on') ){
-    return false;
-  }
-  $('.main').slideUp(550,function(){
-    $('.main').addClass('sub');
-    $('.main').removeClass('main');
-    $('.archieve').addClass('main');
-    $('.archieve').removeClass('.sub');
-    $('.main').slideDown(550);
-    $('.on').addClass('off');
-    $('.on').removeClass('on');
-    $('.archieve-trg').removeClass('off');
-    $('.archieve-trg').addClass('on');
-  });
-});
+// メイン表示領域のスライド
+function slide(cont, trg){
 
-$('.news-trg').click(function(){
-  if( $(this).hasClass('on') ){
-    return false;
+  // クリックしたコンテンツが既に表示されていたら抜ける
+  if( checkMain(trg) ){
+    return false
   }
+
   $('.main').slideUp(550,function(){
-    $('.main').addClass('sub');
-    $('.main').removeClass('main');
-    $('.news').addClass('main');
-    $('.news').removeClass('.sub');
+    removeMain();
+    addMain(cont, trg);
     $('.main').slideDown(550);
-    $('.on').addClass('off');
-    $('.on').removeClass('on');
-    $('.news-trg').removeClass('off');
-    $('.news-trg').addClass('on');
   });
-});
+}
+
+// メインコンテンツクラスの排除
+function removeMain(){
+  $('.main').addClass('sub');
+  $('.main').removeClass('main')
+  $('.on').addClass('off');
+  $('.on').removeClass('on');
+}
+
+// 新しいメインコンテンツにクラスを追加
+function addMain(cls, trg){
+  $(cls).addClass('main');
+  $(cls).removeClass('.sub');
+  $(trg).removeClass('off');
+  $(trg).addClass('on');
+}
+
+// メインコンテンツの変更の有無を調べる
+function checkMain(trg){
+  if( trg.hasClass('on') ){
+    return true;
+  }
+}
