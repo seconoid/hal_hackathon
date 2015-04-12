@@ -19,11 +19,16 @@ header{
   font-size: 26px;
 }
 
+p{
+  margin: 0;
+}
+
 a{
   display: block;
 }
 
 a:link{
+  color: #f9faf2;
   text-decoration: none;
 }
 
@@ -40,14 +45,20 @@ a:visited{
   display: block;
 }
 
-// 非アクティブ要素
-.sub{
-  display: none;
-}
-
 .content{
   background: #f8f2f4;
 	height: 400px
+}
+
+.mv{
+  position: relative;
+}
+
+.archieve{
+  background: #230982;
+  opacity: 0;
+  position: absolute;
+  top: 0;
 }
 
 /* ロゴ */

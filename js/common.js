@@ -54,6 +54,18 @@ $('.concept-trg').click(function(){
   slide(cont, trg);
 });
 
+$('.logo2').click(function(){
+  $('.mv').animate(
+    {"left": "-50px"},
+    "slow"
+  );
+});
+
+$('.archieve-trg').click(function(){
+  var cont = $('.archieve');
+  var trg = $(this);
+  slideIn(cont, trg);
+});
 // メイン表示領域のスライド
 function slide(cont, trg){
 
@@ -88,6 +100,36 @@ function addMain(cls, trg){
 // メインコンテンツの変更の有無を調べる
 function checkMain(trg){
   if( trg.hasClass('on') ){
+    return true;
+  }
+}
+
+function slideIn(cont, trg){
+  // trgに対応するコンテンツが表示されていたら処理を抜ける
+  if( checkCurrent(cont) ){
+    return false;
+  }
+  var pos = $('.mv').offset();
+  var posLeft = pos.left - cont.width();
+  cont.css({ left:posLeft});
+  cont.show();
+  addCurrent(cont);
+  cont.animate({
+    opacity: 1,
+    left: 0,
+    easing: "linear"
+  }, 900 );
+}
+
+// 表示中のコンテンツにcurrentクラスを追加
+function addCurrent(cont){
+  cont.removeClass('uncurrent');
+  cont.addClass('current');
+}
+
+// trgに対応するコンテンツが表示中かの判断
+function checkCurrent(cont){
+  if( cont.hasClass('current') ){
     return true;
   }
 }
