@@ -41,19 +41,6 @@ $(window).on('resize', function(){
   $('.box-z').css('height', w);
 });
 
-// ナビをクリックでコンテンツエリアを変更
-$('.about-trg').click(function(){
-  var cont = $('.about')
-  var trg = $(this)
-  slide(cont, trg);
-});
-
-$('.concept-trg').click(function(){
-  var cont = $('.concept')
-  var trg = $(this)
-  slide(cont, trg);
-});
-
 $('.logo2').click(function(){
   $('.mv').animate(
     {"left": "-50px"},
@@ -61,50 +48,19 @@ $('.logo2').click(function(){
   );
 });
 
+
+// コンテンツに対応するクラスを取得
+$('.about-trg').click(function(){
+  var cont = $('.about');
+  slideIn(cont);
+});
+
 $('.archieve-trg').click(function(){
   var cont = $('.archieve');
-  var trg = $(this);
-  slideIn(cont, trg);
+  slideIn(cont);
 });
-// メイン表示領域のスライド
-function slide(cont, trg){
 
-  // クリックしたコンテンツが既に表示されていたら抜ける
-  if( checkMain(trg) ){
-    return false
-  }
-
-  $('.main').slideUp(550,function(){
-    removeMain();
-    addMain(cont, trg);
-    $('.main').slideDown(550);
-  });
-}
-
-// メインコンテンツクラスの排除
-function removeMain(){
-  $('.main').addClass('sub');
-  $('.main').removeClass('main')
-  $('.on').addClass('off');
-  $('.on').removeClass('on');
-}
-
-// 新しいメインコンテンツにクラスを追加
-function addMain(cls, trg){
-  $(cls).addClass('main');
-  $(cls).removeClass('.sub');
-  $(trg).removeClass('off');
-  $(trg).addClass('on');
-}
-
-// メインコンテンツの変更の有無を調べる
-function checkMain(trg){
-  if( trg.hasClass('on') ){
-    return true;
-  }
-}
-
-function slideIn(cont, trg){
+function slideIn(cont){
   // trgに対応するコンテンツが表示されていたら処理を抜ける
   if( checkCurrent(cont) ){
     return false;
@@ -118,7 +74,11 @@ function slideIn(cont, trg){
     opacity: 1,
     left: 0,
     easing: "linear"
-  }, 900 );
+  }, 850 );
+}
+
+function slideOut(){
+  
 }
 
 // 表示中のコンテンツにcurrentクラスを追加
