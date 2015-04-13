@@ -1,8 +1,7 @@
 // ロード時処理
 $(document).ready(function(){
   // ページ全体をフェードイン
-  $('body').fadeIn(1000);
-  $('.sub').hide();
+  $('body').fadeIn(700);
 
   // 正方形を生成
   // ヘッダ部分
@@ -41,17 +40,24 @@ $(window).on('resize', function(){
   $('.box-z').css('height', w);
 });
 
+// ロゴをクリックでメイン表示領域をリセット
 $('.logo2').click(function(){
-  $('.mv').animate(
-    {"left": "-50px"},
-    "slow"
-  );
-});
-
+  slideOut();
+})
 
 // コンテンツに対応するクラスを取得
 $('.about-trg').click(function(){
   var cont = $('.about');
+  slideIn(cont);
+});
+
+$('.concept-trg').click(function(){
+  var cont = $('.concept');
+  slideIn(cont);
+});
+
+$('.schedule-trg').click(function(){
+  var cont = $('.schedule');
   slideIn(cont);
 });
 
@@ -60,25 +66,57 @@ $('.archieve-trg').click(function(){
   slideIn(cont);
 });
 
+// trgに対応するコンテンツをフェードインする
 function slideIn(cont){
-  // trgに対応するコンテンツが表示されていたら処理を抜ける
+  // コンテンツが既に表示されていたら処理を抜ける
   if( checkCurrent(cont) ){
     return false;
   }
+
+  // 表示開始位置設定
   var pos = $('.mv').offset();
   var posLeft = pos.left - cont.width();
   cont.css({ left:posLeft});
   cont.show();
+
+  // 非表示になるコンテンツからcurrentクラスを排除
+  removeCurrent();
+
+  // 表示中のコンテンツにはcurrentクラスを付与
   addCurrent(cont);
+
+  // 透明から表示
+  cont.css({ opacity:0 });
+
+  // 新しく表示するボックスを一番手前に設定
+  setZindex();
+
+  // フェードイン
   cont.animate({
-    opacity: 1,
+    opacity: 0.97,
     left: 0,
     easing: "linear"
   }, 850 );
 }
 
 function slideOut(){
-  
+
+  // フェードアウト位置設定
+  var pos = $('.mv').offset();
+  var posLeft = pos.left + $('.mv').width();
+
+  // フェードアウト
+  $('.sub').animate({
+    opacity: 0,
+    left: posLeft
+  }, 850);
+
+  $(function(){
+    setTimeout(function(){
+      $('.sub').hide();
+    }, 850)
+  })
+  removeCurrent();
 }
 
 // 表示中のコンテンツにcurrentクラスを追加
@@ -92,4 +130,16 @@ function checkCurrent(cont){
   if( cont.hasClass('current') ){
     return true;
   }
+}
+
+// currentクラスを排除
+function removeCurrent(){
+  $('.current').addClass('uncurrent');
+  $('.current').removeClass('current');
+}
+
+// currentクラスのコンテンツを一番手前に表示
+function setZindex(){
+  $('.uncurrent').css({zIndex:1});
+  $('.current').css({zIndex:2});
 }
