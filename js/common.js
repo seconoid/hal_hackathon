@@ -1,3 +1,5 @@
+var z = 1; //z-indexの値
+
 // ロード時処理
 $(document).ready(function(){
   // ページ全体をフェードイン
@@ -117,6 +119,7 @@ function slideOut(){
     }, 850)
   })
   removeCurrent();
+  z = 1;
 }
 
 // 表示中のコンテンツにcurrentクラスを追加
@@ -140,6 +143,6 @@ function removeCurrent(){
 
 // currentクラスのコンテンツを一番手前に表示
 function setZindex(){
-  $('.uncurrent').css({zIndex:1});
-  $('.current').css({zIndex:2});
+  z += 1;
+  $('.current').css({zIndex:z});
 }
