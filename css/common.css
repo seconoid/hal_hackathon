@@ -15,7 +15,6 @@
 /* fadeIn用に全体を非表示にしておく */
 body {
   background: #e93a41;
-  font-family: "vertigo";
   display: none;
 }
 
@@ -23,6 +22,16 @@ header{
   color: #f9faf2;
   text-align: center;
   font-size: 26px;
+  font-family: "vertigo";
+}
+
+footer{
+  color: #f9faf2;
+  font-family:  "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, Meiryo, sans-serif;
+  font-size: 10px;
+  height: 30px;
+  line-height: 30px;
+  text-align: right;
 }
 
 h1 {
@@ -33,6 +42,11 @@ h1 {
 p{
   padding: 0;
   margin: 0;
+}
+
+.content p{
+  font-size: 16px;
+  font-family:  "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, Meiryo, sans-serif;
 }
 
 a{
@@ -85,7 +99,7 @@ a:visited{
 .logo{
   color: #fff8f1;
   height: 50px;
-  background: #f33254;
+  background: #e93a41;
   text-align: center;
   line-height: 50px;
 }
@@ -127,6 +141,7 @@ a:visited{
 }
 
 .square{
+  font-family: "vertigo";
   transform: rotateY(90deg);
   animation: rotate_panel 0.7s 0.7s;
   -webkit-animation: rotate_panel 0.7s 0.7s;
