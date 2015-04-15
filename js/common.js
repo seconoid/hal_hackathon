@@ -63,6 +63,11 @@ $('.schedule-trg').click(function(){
   slideIn(cont);
 });
 
+$('.news-trg').click(function(){
+  var cont = $('.news');
+  slideIn(cont);
+});
+
 $('.archieve-trg').click(function(){
   var cont = $('.archieve');
   slideIn(cont);

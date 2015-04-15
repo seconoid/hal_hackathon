@@ -39,6 +39,11 @@ h1 {
   font-family:  "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, Meiryo, sans-serif;
 }
 
+h2 {
+  color: #5a4747;
+  font-family:  "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, Meiryo, sans-serif;
+  font-size: 22px;
+}
 p{
   padding: 0;
   margin: 0;
@@ -83,13 +88,6 @@ a:visited{
 .sub{
   display: none;
   background: #faefef;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-}
-
-.archieve{
-  background: #230982;
   opacity: 0;
   position: absolute;
   top: 0;
